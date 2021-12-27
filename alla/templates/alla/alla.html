@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block title %}Aladdin Ep{{epd.epnum}}{% endblock %}
+
+{% block body %}
+<h2 id="heading" ondblclick="change()" class="text-center">Aladdin Episode {{epd.epnum}}</h2>
+<div id="container">
+    <div class="card text-white text-center bg-dark m-2">
+        <div class="card-header py-1">
+            Episode - {{epd.epnum}}
+        </div>
+        <div class="card-body py-2">
+            <h5 class="card-title">{{epd.name}}</h5>
+            <p class="card-text">
+                {{epd.details}}
+            </p>
+        </div>
+        <div class="card-footer text-muted py-1">
+            {{epd.date}}
+        </div>
+    </div>
+</div>
+<div style="bottom:26px;" id="float" class="btn-group" role="group">
+    <button onclick="prev()" type="button" class="btn btn-primary">&lt;&lt;&plus;</button>
+    <button onclick="goto()" type="button" class="btn btn-primary">Goto</button>
+    <button onclick="next()" type="button" class="btn btn-primary">&plus;&gt;&gt;</button>
+</div>
+<script>p = v = {{epd.epnum}};</script>
+
+{% endblock %}
