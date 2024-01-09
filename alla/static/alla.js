@@ -48,19 +48,19 @@ async function add(pos, a) {
 }
 
 const prev = () => {
-    p--;
-    if(p==0){
+    if(p <= 1){
         alert('At beggining');
         return; 
     }
+    p--;
     add('afterbegin', p);
 };
 
 const next = () => {
-    v++;
-    if(p==573){
+    if(v >= 572){
         alert('At end');
         return; 
     }
+    v++;
     add('beforeend', v);
 };
